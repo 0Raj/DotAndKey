@@ -1,3 +1,7 @@
+import { createProductCard } from "./Scripts/main.js";
+console.log(createProductCard);
+
+
 let bodyScrubData = [
   {
     DispName: "Vitamin C & Avalon Lemon",
@@ -313,6 +317,21 @@ let comboData = [
   },
 ];
 
-import { footer } from "./Componentes/footer.js";
-let foot = footer;
-document.querySelector("#footer").innerHTML=foot();
+let scrubParent = document.querySelector("#scrubCard")
+let serumParent = document.querySelector("#serumCard")
+let butterParent = document.querySelector("#butterCard")
+let comboParent = document.querySelector("#comboCard")
+createProductCard(bodyScrubData,scrubParent);
+createProductCard(bodySerumData,serumParent);
+createProductCard(bodyButterData,butterParent);
+createProductCard(comboData,comboParent);
+
+document.querySelector("#mainProduct>div:nth-child(1)").addEventListener("click",()=>{
+  location.href = "#butter";
+});
+document.querySelector("#mainProduct>div:nth-child(2)").addEventListener("click",()=>{
+  location.href = "#serum";
+})
+document.querySelector("#mainProduct>div:nth-child(3)").addEventListener("click",()=>{
+  location.href = "#scrub";
+})
