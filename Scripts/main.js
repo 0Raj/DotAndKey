@@ -112,14 +112,11 @@ function createProductPage(data, parent) {
     thirdLi.textContent =
       "Upto 15% Off On Haircare + Free Detangling Brush on All Haircare Combos";
     let fourthLi = document.createElement("li");
-    fourthLi.textContent =
-      "Flat 10% Off On Bodycare";
+    fourthLi.textContent = "Flat 10% Off On Bodycare";
     let fiveLi = document.createElement("li");
-    fiveLi.textContent =
-      "Extra 3% Off on Prepaid Orders";
+    fiveLi.textContent = "Extra 3% Off on Prepaid Orders";
     let sixLi = document.createElement("li");
-    sixLi.textContent =
-      "10% Cashback on all orders";
+    sixLi.textContent = "10% Cashback on all orders";
 
     UlDiv.append(firstLi, secLi, thirdLi, fourthLi, fiveLi, sixLi);
     perksDiv.append(headPerks, UlDiv);
@@ -128,22 +125,21 @@ function createProductPage(data, parent) {
     let rigthDiv = document.createElement("div");
     rigthDiv.id = "rigthDiv";
     let rightName = document.createElement("div");
-    rightName.id="rightName";
+    rightName.id = "rightName";
     rightName.textContent = elem.name;
 
     let starDiv = document.createElement("i");
-    starDiv.id="starDiv";
+    starDiv.id = "starDiv";
 
-    for(let i=1; i<=5; i++){
-        let star = document.createElement("i");
-        star.setAttribute("class", "fa-solid fa-star");
-        starDiv.append(star);
+    for (let i = 1; i <= 5; i++) {
+      let star = document.createElement("i");
+      star.setAttribute("class", "fa-solid fa-star");
+      starDiv.append(star);
     }
-    let review =  document.createElement("a");
+    let review = document.createElement("a");
     review.href = "#";
-    review.id="review";
-    review.textContent = `${elem.review} Reviews`
-
+    review.id = "review";
+    review.textContent = `${elem.review} Reviews`;
 
     let mainPrice = document.createElement("div");
     mainPrice.id = "mainPrice";
@@ -158,62 +154,86 @@ function createProductPage(data, parent) {
 
     let tax = document.createElement("div");
     tax.textContent = "Inclusive of All Taxes";
-    tax.id="tax";
+    tax.id = "tax";
 
     let size = document.createElement("div");
     size.textContent = "SIZE";
-    size.id = "size"
+    size.id = "size";
 
     let sizeDiv = document.createElement("div");
-    sizeDiv.id="sizeDiv";
+    sizeDiv.id = "sizeDiv";
     sizeDiv.textContent = `${elem.size} ml`;
 
     let addFav = document.createElement("div");
-    addFav.id="addFav";
+    addFav.id = "addFav";
 
     let cart = document.createElement("button");
     cart.textContent = "ADD TO CART";
     cart.id = "Addcart";
 
     let heart = document.createElement("i");
+    heart.id = "heart";
     heart.setAttribute("class", "fa-regular fa-heart");
-
+    let count = 1;
+    heart.addEventListener("click", (elem) => {
+        count++;
+      console.log(count);
+      if (count % 2 == 0) {
+        document
+          .querySelector("#heart")
+          .setAttribute("class", "fa-solid fa-heart");
+        document.querySelector("#heart").style.color = "red";
+      }
+      else{
+        document
+        .querySelector("#heart")
+        .setAttribute("class", "fa-regular fa-heart");
+        document.querySelector("#heart").style.color = "#3c3c3c";
+      }
+    });
 
     let descp = document.createElement("div");
     descp.textContent = elem.discription;
-    descp.id="descp";
-
+    descp.id = "descp";
 
     let featureDiv = document.createElement("div");
-    featureDiv.id="featureDiv";
+    featureDiv.id = "featureDiv";
     let featureHead = document.createElement("span");
     featureHead.textContent = "Feel the ";
     let featureHead2 = document.createElement("span");
     featureHead2.textContent = " Love";
 
     let featureImageDiv = document.createElement("div");
-    featureImageDiv.id="featureImageDiv";
-    for(let i=0; i<3; i++){
-        let imgSrc = document.createElement("img");
-        imgSrc.src = elem.featuresImg[i];
-        featureImageDiv.append(imgSrc);
+    featureImageDiv.id = "featureImageDiv";
+    for (let i = 0; i < 3; i++) {
+      let imgSrc = document.createElement("img");
+      imgSrc.src = elem.featuresImg[i];
+      featureImageDiv.append(imgSrc);
     }
     let fTextDiv = document.createElement("div");
-    fTextDiv.id="fTextDiv";
-    for(let i=0; i<3; i++){
-        let textSrc = document.createElement("div");
-        textSrc.textContent = elem.features[i];
-        fTextDiv.append(textSrc);
+    fTextDiv.id = "fTextDiv";
+    for (let i = 0; i < 3; i++) {
+      let textSrc = document.createElement("div");
+      textSrc.textContent = elem.features[i];
+      fTextDiv.append(textSrc);
     }
-    
 
-
-
-
-
-    featureDiv.append(featureHead,featureHead2)
-    addFav.append(cart,heart)
-    rigthDiv.append(rightName,starDiv,review,mainPrice,tax,size,sizeDiv,addFav,descp,featureDiv,featureImageDiv,fTextDiv);
+    featureDiv.append(featureHead, featureHead2);
+    addFav.append(cart, heart);
+    rigthDiv.append(
+      rightName,
+      starDiv,
+      review,
+      mainPrice,
+      tax,
+      size,
+      sizeDiv,
+      addFav,
+      descp,
+      featureDiv,
+      featureImageDiv,
+      fTextDiv
+    );
     topDiv.append(leftDiv, rigthDiv);
     parent.append(topDiv);
   });
