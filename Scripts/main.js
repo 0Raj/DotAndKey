@@ -79,20 +79,21 @@ function createProductPage(data, parent) {
     let thumbMain = document.createElement("div");
     thumbMain.id = "thumbMain";
 
-    let thumb1 = document.createElement("img");
-    thumb1.src = elem.prodImgUrl[0];
-    let thumb2 = document.createElement("img");
-    thumb2.src = elem.prodImgUrl[1];
-    let thumb3 = document.createElement("img");
-    thumb3.src = elem.prodImgUrl[2];
-    let thumb4 = document.createElement("img");
-    thumb4.src = elem.prodImgUrl[3];
-    let thumb5 = document.createElement("img");
-    thumb5.src = elem.prodImgUrl[3];
-    let thumb6 = document.createElement("img");
-    thumb6.src = elem.prodImgUrl[3];
 
-    thumbMain.append(thumb1, thumb2, thumb3, thumb4, thumb5, thumb6);
+    for(let i=0; i<elem.prodImgUrl.length; i++){
+      let thumb1 = document.createElement("img");
+      thumb1.class = "thumb1";
+      thumb1.src = elem.prodImgUrl[i];
+      thumbMain.append(thumb1)
+      thumb1.addEventListener("click",()=>{
+        let list = document.querySelectorAll('img')
+          for(let j=0; j<list.length; j++){
+            list[j].style.border="0px solid black"
+          }
+        leftMainImg.src = elem.prodImgUrl[i];
+        thumb1.style.border="2px solid black"
+      })
+    }
 
     let perksDiv = document.createElement("div");
     perksDiv.id = "perksDiv";
@@ -157,12 +158,15 @@ function createProductPage(data, parent) {
     tax.id = "tax";
 
     let size = document.createElement("div");
-    size.textContent = "SIZE";
     size.id = "size";
-
     let sizeDiv = document.createElement("div");
     sizeDiv.id = "sizeDiv";
-    sizeDiv.textContent = `${elem.size} ml`;
+    if (elem.size != undefined) {
+      size.textContent = "SIZE";
+      sizeDiv.textContent = `${elem.size} ml`;
+    } else {
+      sizeDiv.style.border ="0px"
+    }
 
     let addFav = document.createElement("div");
     addFav.id = "addFav";
@@ -176,18 +180,17 @@ function createProductPage(data, parent) {
     heart.setAttribute("class", "fa-regular fa-heart");
     let count = 1;
     heart.addEventListener("click", (elem) => {
-        count++;
+      count++;
       console.log(count);
       if (count % 2 == 0) {
         document
           .querySelector("#heart")
           .setAttribute("class", "fa-solid fa-heart");
         document.querySelector("#heart").style.color = "red";
-      }
-      else{
+      } else {
         document
-        .querySelector("#heart")
-        .setAttribute("class", "fa-regular fa-heart");
+          .querySelector("#heart")
+          .setAttribute("class", "fa-regular fa-heart");
         document.querySelector("#heart").style.color = "#3c3c3c";
       }
     });

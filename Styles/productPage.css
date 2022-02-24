@@ -24,10 +24,11 @@ body {
   #thumbMain {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     width: 100%;
     margin-top: 2%;
     margin-bottom: 67px;
+    gap: 20px;
   }
   #thumbMain > img {
     width: 15%;
@@ -185,7 +186,7 @@ body {
     display: block;
     margin-top: 26px;
     font-style: normal;
-    font-size: 0.77778em;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 0em;
     line-height: 1.4;
@@ -194,7 +195,7 @@ body {
     color: #3c3c3c;
   }
   #sizeDiv {
-    box-shadow: 0 0 0 2px #3c3c3c;
+    border: #3c3c3c 2px solid;
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -203,10 +204,8 @@ body {
     margin: 10px 8px 12px 0;
     font-style: normal;
     font-size: 18px;
-   
     text-transform: none;
     background-color: #fff;
-    box-shadow: 0 0 0 2px #292929;
     letter-spacing: 0.05em;
     line-height: 1.9;
     color: #3c3c3c;
