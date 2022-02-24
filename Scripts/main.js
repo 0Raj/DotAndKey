@@ -79,20 +79,19 @@ function createProductPage(data, parent) {
     let thumbMain = document.createElement("div");
     thumbMain.id = "thumbMain";
 
-
-    for(let i=0; i<elem.prodImgUrl.length; i++){
+    for (let i = 0; i < elem.prodImgUrl.length; i++) {
       let thumb1 = document.createElement("img");
       thumb1.class = "thumb1";
       thumb1.src = elem.prodImgUrl[i];
-      thumbMain.append(thumb1)
-      thumb1.addEventListener("click",()=>{
-        let list = document.querySelectorAll('img')
-          for(let j=0; j<list.length; j++){
-            list[j].style.border="0px solid black"
-          }
+      thumbMain.append(thumb1);
+      thumb1.addEventListener("click", () => {
+        let list = document.querySelectorAll("img");
+        for (let j = 0; j < list.length; j++) {
+          list[j].style.border = "0px solid black";
+        }
         leftMainImg.src = elem.prodImgUrl[i];
-        thumb1.style.border="2px solid black"
-      })
+        thumb1.style.border = "2px solid black";
+      });
     }
 
     let perksDiv = document.createElement("div");
@@ -165,7 +164,7 @@ function createProductPage(data, parent) {
       size.textContent = "SIZE";
       sizeDiv.textContent = `${elem.size} ml`;
     } else {
-      sizeDiv.style.border ="0px"
+      sizeDiv.style.border = "0px";
     }
 
     let addFav = document.createElement("div");
@@ -239,41 +238,38 @@ function createProductPage(data, parent) {
     );
     topDiv.append(leftDiv, rigthDiv);
 
-      let head2 = document.createElement("div");
-      head2.id="head2";
+    let head2 = document.createElement("div");
+    head2.id = "head2";
 
-      let headspn1 = document.createElement("span");
-      headspn1.textContent ="Made With ";
+    let headspn1 = document.createElement("span");
+    headspn1.textContent = "Made With ";
 
-      let headspn2 = document.createElement("span");
-      headspn2.textContent =" Love";
+    let headspn2 = document.createElement("span");
+    headspn2.textContent = " Love";
 
-      head2.append(headspn1,headspn2);
+    head2.append(headspn1, headspn2);
 
-      let banner1 = document.createElement("img");
-      banner1.src = elem.promo1;
+    let banner1 = document.createElement("img");
+    banner1.src = elem.promo1;
+    banner1.id="banner1"
 
-      let head3 = document.createElement("div");
-      head3.id="head3";
+    let head3 = document.createElement("div");
+    head3.id = "head3";
 
-      let headspn3 = document.createElement("span");
-      headspn3.textContent ="Slather ";
+    let headspn3 = document.createElement("span");
+    headspn3.textContent = "Slather ";
 
-      let headspn4 = document.createElement("span");
-      headspn4.textContent =" Not Slurp";
+    let headspn4 = document.createElement("span");
+    headspn4.textContent = " Not Slurp";
 
-      head3.append(headspn3,headspn4);
+    head3.append(headspn3, headspn4);
 
-      let banner2 = document.createElement("img");
-      banner2.src = elem.promo3;
-
-
-
-
+    let banner2 = document.createElement("img");
+    banner2.src = elem.promo3;
+    banner2.id="banner2"
 
 
-
-    parent.append(topDiv,head2,banner1,head3,banner2);
+    parent.append(topDiv, head2, banner1, head3, banner2);
   });
 }
 export { createProductCard, createProductPage };
