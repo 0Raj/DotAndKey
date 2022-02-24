@@ -238,7 +238,42 @@ function createProductPage(data, parent) {
       fTextDiv
     );
     topDiv.append(leftDiv, rigthDiv);
-    parent.append(topDiv);
+
+      let head2 = document.createElement("div");
+      head2.id="head2";
+
+      let headspn1 = document.createElement("span");
+      headspn1.textContent ="Made With ";
+
+      let headspn2 = document.createElement("span");
+      headspn2.textContent =" Love";
+
+      head2.append(headspn1,headspn2);
+
+      let banner1 = document.createElement("img");
+      banner1.src = elem.promo1;
+
+      let head3 = document.createElement("div");
+      head3.id="head3";
+
+      let headspn3 = document.createElement("span");
+      headspn3.textContent ="Slather ";
+
+      let headspn4 = document.createElement("span");
+      headspn4.textContent =" Not Slurp";
+
+      head3.append(headspn3,headspn4);
+
+      let banner2 = document.createElement("img");
+      banner2.src = elem.promo3;
+
+
+
+
+
+
+
+    parent.append(topDiv,head2,banner1,head3,banner2);
   });
 }
 export { createProductCard, createProductPage };
