@@ -1,9 +1,9 @@
 import { createProductCard } from "./Scripts/main.js";
 import {navBar} from './Componentes/navBar.js';
-let nav = navBar;
+import {footer} from './Componentes/footer.js';
+
 document.querySelector("#navbar").innerHTML = navBar();
-
-
+document.querySelector("#footer").innerHTML = footer();
 let bodyScrubData = [
   {
     DispName: "Vitamin C & Avalon Lemon",
