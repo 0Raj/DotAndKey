@@ -9,21 +9,30 @@
       href="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/d_and_k_and_logo_1_32x32.png?v=1593074179"
     />
     <link rel="stylesheet" href="/Styles/productPage.css" />
+    <link rel="stylesheet" href="/Styles/navBar.css">
+    <link rel="stylesheet" href="/Styles/footer.css">
     <script
       src="https://kit.fontawesome.com/193a1c0cfc.js"
       crossorigin="anonymous"
     ></script>
     <title>Body Care -Dot & Key</title>
-    <style></style>
+    <style>
+     
+    </style>
   </head>
   <body>
-    <div id="navBar"></div>
+    <div id="navbar"></div>
     <div id="main"></div>
     <div id="footer"></div>
   </body>
 </html>
 <script type="module">
   import { createProductPage } from "./Scripts/main.js";
+  import { navBar } from "./Componentes/navBar.js";
+  import { footer } from "./Componentes/footer.js";
+
+  document.querySelector("#navbar").innerHTML = navBar();
+  document.querySelector("#footer").innerHTML = footer();
   let data = [JSON.parse(localStorage.getItem("productData"))];
   console.log(data);
   let parent = document.querySelector("#main");

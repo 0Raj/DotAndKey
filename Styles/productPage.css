@@ -166,7 +166,6 @@ body {
 }
 #review {
   font-size: 17px;
-  position: relative;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -195,7 +194,6 @@ body {
 }
 #sizeDiv {
   border: #3c3c3c 2px solid;
-  position: relative;
   display: inline-block;
   line-height: 1;
   font-weight: 400;
