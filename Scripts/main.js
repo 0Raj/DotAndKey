@@ -272,4 +272,6 @@ function createProductPage(data, parent) {
     parent.append(topDiv, head2, banner1, head3, banner2);
   });
 }
+
+
 export { createProductCard, createProductPage };
