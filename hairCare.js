@@ -618,3 +618,6 @@ import { navBar,navInt,navcar } from "./Componentes/navBar.js";
 document.querySelector("#leftNav > img ").addEventListener("click",()=>{
   location.href = "index.html";
 });
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+  location.href = "cart.html";
+});

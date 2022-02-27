@@ -1,6 +1,6 @@
 import { navBar,navInt,navcar } from "./Componentes/navBar.js";
 import { footer } from "./Componentes/footer.js";
-console.log(navBar);
+
 document.querySelector("#navbar").innerHTML = navBar();
 document.querySelector("#footer").innerHTML = footer();
 document.querySelector("#navInterval").innerHTML = navInt();
@@ -13,6 +13,22 @@ document.querySelector("#user").addEventListener("click",()=>{
 document.querySelector("#leftNav > img ").addEventListener("click",()=>{
     location.href = "index.html";
 });
+cartBag
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+    location.href = "cart.html";
+});
+
+let status = JSON.parse(localStorage.getItem("loginData"));
+console.log("status",status)
+if(status == false){
+   document.querySelector("#Sign_Out").textContent = "Sign Out"
+ }
+
+ document.querySelector("#Sign_Out").addEventListener("click",()=>{
+        localStorage.setItem("loginData",true);
+        document.querySelector("#Sign_Out").textContent = ""
+        alert("Signed Out Successfully");
+ });
 
 import touch from "./Componentes/touch.js";
 let touchslide=document.querySelector("#touch_sld");

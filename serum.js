@@ -305,3 +305,6 @@ createProductCard(serum_data,parent)
 document.querySelector("#leftNav > img ").addEventListener("click",()=>{
   location.href = "index.html";
 });
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+  location.href = "cart.html";
+});

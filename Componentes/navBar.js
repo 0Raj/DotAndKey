@@ -9,8 +9,9 @@ function navBar(){
     <i class="fa-solid fa-magnifying-glass"></i>
     <input id="searchProd" placeholder="Search" type="text">
   </div>
-    <i class="fa-solid fa-bag-shopping"></i>
+    <i id="cartBag" class="fa-solid fa-bag-shopping"></i>
     <i id="user" class="fa-solid fa-user"></i>
+    <span id="Sign_Out">  </span>
 
   </div>`
 }
