@@ -31,6 +31,7 @@
   import { createProductPage } from "./Scripts/main.js";
   import { navBar,navInt,navcar } from "./Componentes/navBar.js";
   import { footer } from "./Componentes/footer.js";
+  
   document.querySelector("#navInterval").innerHTML = navInt();
   let i = 0;
   navcar(i);
@@ -42,8 +43,8 @@
   createProductPage(data, parent);
   document.querySelector("#leftNav > img ").addEventListener("click",()=>{
   location.href = "index.html";
-  document.querySelector("#cartBag ").addEventListener("click",()=>{
-    location.href = "cart.html";
 });
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+    location.href = "cart.html";
 });
 </script>

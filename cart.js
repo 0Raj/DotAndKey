@@ -1,4 +1,4 @@
-let cartData = JSON.parse(localStorage.getItem("cartData")) || [];
+let cartData = JSON.parse(localStorage.getItem("cartArr"))|| [];
 let sum;
 
 total(cartData);
@@ -109,7 +109,7 @@ function discount(e) {
 
 let checkout = document.getElementById("checkout");
 checkout.addEventListener("click", function () {
-  window.location.href = "";
+  window.location.href = "payment.html";
 });
 import { navBar, navInt, navcar } from "./Componentes/navBar.js";
 import { footer } from "./Componentes/footer.js";
