@@ -1,4 +1,5 @@
 function createProductCard(data, parent) {
+  let cartArr =JSON.parse(localStorage.getItem("cartArr"))||[];
   data.map((elem) => {
     let mainDiv = document.createElement("div");
     mainDiv.id = "mainDiv";
@@ -42,9 +43,10 @@ function createProductCard(data, parent) {
     cart.textContent = "ADD TO CART";
     cart.id = "Addcart";
 
-    cart.addEventListener("click", () => {
-      localStorage.setItem("productData", JSON.stringify(elem));
-      location.href = "productPage.html";
+    cart.addEventListener("click",()=>{
+      cartArr.push(elem);
+      localStorage.setItem("cartArr",JSON.stringify(cartArr));
+      alert("Added To Cart")
     });
 
     imgDiv.addEventListener("click", () => {

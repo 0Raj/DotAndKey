@@ -65,7 +65,7 @@ cartDisplay(cartData);
 
 function removeData(array, index) {
   array.splice(index, 1);
-  localStorage.setItem("cartData", JSON.stringify(array));
+  localStorage.setItem("cartArr", JSON.stringify(array));
   cartDisplay(array);
   total(cartData);
 }
