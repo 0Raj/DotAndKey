@@ -34,7 +34,7 @@
           </div>
           <div id="paymentHead">
             <div>Contact information</div>
-            <div>Already have an account? <a href="#">Log in</a></div>
+            <div>Already have an account? <a href="login.html">Log in</a></div>
           </div>
           <div class="inputDiv">
             <input type="email" placeholder="Email" />
@@ -262,24 +262,56 @@
           <div id="last">
             <div>
               <i class="fa-solid fa-chevron-left"></i>
-              <span> Return to cart</span>
-            </div>
-            <div>
-              <button>Continue to shipping</button>
+              <a href="cart.html"><span> Return to cart</span></a>
             </div>
           </div>
-          <hr>
+          <hr />
           <div id="foot">
-              <spam>Refund Policy</spam>
-              <spam>Shipping policy</spam>
-              <spam>Privacy Policy</spam>
-              <spam> Terms of service</spam>
+            <spam>Refund Policy</spam>
+            <spam>Shipping policy</spam>
+            <spam>Privacy Policy</spam>
+            <spam> Terms of service</spam>
           </div>
         </div>
       </div>
       <div id="rightDiv">
-        <div id="innerRight"></div>
+        <div id="innerRight">
+          <div id="shipHead">Payment Details</div>
+          <div id="cardName">
+            <input type="text" placeholder="Name On The Card" />
+          </div>
+          <div class="inputDiv">
+            <input type="number" placeholder="Card Number" />
+          </div>
+          <div class="inputDiv">
+            <input type="password" placeholder="CVV" />
+          </div>
+          <div id="city">
+            <input type="text" placeholder="Exp Date" />
+            <input type="text" placeholder="Exp Month" />
+          </div>
+          <div class="inputDiv">
+            <input type="number" placeholder="Phone" />
+          </div>
+          <div id="check">
+            <input type="checkbox" name="check" id="check" />
+            <span for="check"> Save this information for next time </span>
+          </div>
+          <div id="placeOrder">
+            <button>Place Order</button>
+          </div>
+
+        </div>
       </div>
     </div>
   </body>
 </html>
+<script>
+  let cartData = JSON.parse(localStorage.getItem("cartArr"))
+  document.querySelector("#placeOrder").addEventListener("click",()=>{
+    alert("Order Placed SuccessFully, ThankYou");
+    cartData=[];
+    localStorage.setItem("cartArr",JSON.stringify(cartData));
+    location.href="index.html"
+  })
+</script>

@@ -67,6 +67,7 @@ function createProductCard(data, parent) {
 }
 
 function createProductPage(data, parent) {
+  let cartArr =JSON.parse(localStorage.getItem("cartArr"))||[];
   data.map((elem) => {
     let topDiv = document.createElement("div");
     topDiv.id = "topDiv";
@@ -173,6 +174,12 @@ function createProductPage(data, parent) {
     let cart = document.createElement("button");
     cart.textContent = "ADD TO CART";
     cart.id = "Addcart";
+    
+    cart.addEventListener("click",()=>{
+      cartArr.push(elem);
+      localStorage.setItem("cartArr",JSON.stringify(cartArr));
+      alert("Added To Cart")
+    });
 
     let heart = document.createElement("i");
     heart.id = "heart";
