@@ -274,4 +274,160 @@ function createProductPage(data, parent) {
 }
 
 
-export { createProductCard, createProductPage };
+function mainDisp(){
+  return `<div id="addImage">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/bodycare_desktop.png?v=1639668460"
+    alt=""
+  />
+</div>
+<div id="secondImg">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/2-SPREAD-THE-LOVE-Desktop-Final_3.png?v=1638165803"
+    alt=""
+  />
+</div>
+<div id="head1">
+  <div class="subHead">Just In</div>
+  <div class="subHead2">BODYCARE</div>
+</div>
+<div id="mainProduct">
+  <div class="card">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/ROSE_2.png?v=1636617537"
+      alt=""
+    />
+    <div class="subCard">
+      <span>Body</span>
+      <span>Butter</span>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/0_1.png?v=1636623319"
+      alt=""
+    />
+    <div class="subCard">
+      <span>Serum</span>
+      <span>Lotion</span>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/1.3_d0fb05cd-1610-4b66-ad0d-391d4aad2676.png?v=1636537323"
+      alt=""
+    />
+    <div class="subCard">
+      <span>Body</span>
+      <span>Scrub</span>
+    </div>
+  </div>
+</div>
+<div id="promoImgLast">
+  <img
+    src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/3-Model-Image-Desktop_2_1ac15045-7c83-4680-9bd8-6d5a5878a0c4.png?v=1636955347"
+    alt=""
+  />
+</div>
+<div class="head2">
+  <div id="scrub">BODY</div>
+  <div>SCRUB</div>
+  <div>Buff’ that Ruff’</div>
+</div>
+<div class="productList">
+  <div id="scrubCard"></div>
+</div>
+<div class="head2">
+  <div id="serum">SERUM</div>
+  <div>LOTIONS</div>
+  <div>Hydration’s your bae</div>
+</div>
+<div class="productList">
+  <div id="serumCard"></div>
+</div>
+<div class="head2">
+  <div id="butter">BODY</div>
+  <div>BUTTER</div>
+  <div>Buttery, melt-in goodness</div>
+</div>
+<div class="productList">
+  <div id="butterCard"></div>
+</div>
+<div class="head2">
+  <div>OUR</div>
+  <div>COMBOS</div>
+  <div></div>
+</div>
+<div class="productList">
+  <div id="comboCard"></div>
+</div>
+
+<div id="video">
+  <div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YuM30jM381M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div id="banner">
+    <img src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/4-Revised-Youtube-Desktop.png?v=1638165848" alt="">
+  </div>
+</div>`
+}
+
+
+
+let arr = [
+
+  {imgUrl:"https://bit.ly/33Ig1FO", name:"VITAMIN C+E SUPER BRIGHT MOISTURIZER", price:"Rs.595.00"},
+  {imgUrl:"https://bit.ly/3h2LwNO", name:"NIGHT RESET RETINOL + CERAMIDE TREATMENT CREAM", price:"Rs.897.00"},
+  {imgUrl:"https://bit.ly/3p4ECMg", name:"CICA CALMING NIGHT GEL WITH NIACINAMIDE", price:"Rs.595.00"},
+  {imgUrl:"https://bit.ly/3v803QE", name:"WATERMELON SUPERGLOW MATTE MOISTURIZER", price:"Rs.595.00"},
+  {imgUrl:"https://bit.ly/3IdSziO", name:"72HR HYDRATION GEL + PROBIOTICS", price:"Rs.707.00"},
+  {imgUrl:"https://bit.ly/35ga2sj", name:"AVOCADO SMOOTHIE DAY CREAM SPF 20", price:"Rs.845.00"},
+  {imgUrl:"https://bit.ly/3sYip3N", name:"DAY & NIGHT CARE COMBO", price:"Rs.1,161.00"},
+  {imgUrl:"https://bit.ly/3h8RdtH", name:"HAND CREAM + SANITIZER, LAVENDER", price:"Rs.395.00"},
+  {imgUrl:"https://bit.ly/3BDsffs", name:"FOOT CREAM + DEODORIZER, MINT", price:"Rs.395.00"},
+  {imgUrl:"https://bit.ly/3v5lUbp", name:"HAND CREAM + SANITIZER, ROSE", price:"Rs.395.00"},
+  {imgUrl:"https://bit.ly/3BE23kT", name:"HAND CREAM + SANITIZER, MANDARIN", price:"Rs.395.00"},
+  
+  ];
+  
+  let data = (parent) =>{
+  
+      arr.map ((items)=>{
+  
+          let div = document.createElement("div");
+  
+          let img = document.createElement("img");
+          img.src = items.imgUrl;
+  
+          let rating = Math.floor(Math.random() * (6 - 2) + 2);;
+          let bag = "";
+          for(let i=0; i<Math.floor(rating); i++){
+              bag += "★";
+          }
+  
+          let heart = document.createElement("p")
+          heart.textContent = "♡";
+          heart.style.display = "inline-block"
+          heart.style.marginLeft = "60%"
+          heart.style.fontSize = "25px"
+  
+          let name = document.createElement("h4");
+          name.textContent = items.name;
+  
+          let price = document.createElement("h6");
+          price.textContent = items.price;
+  
+          let btn = document.createElement("button");
+          btn.textContent = "ADD TO CART";
+          btn.onclick=()=>{
+              alert("Your item added successfully!")
+          }
+  
+          div.append(img, bag, rating, heart, name, price, btn);
+  
+          parent.append(div);
+      });
+  }
+  
+
+export { createProductCard, createProductPage,mainDisp,data};

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/193a1c0cfc.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      href="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/d_and_k_and_logo_1_32x32.png?v=1593074179"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Styles/moisturizer.css" />
+    <link rel="stylesheet" href="/Styles/navBar.css" />
+    <link rel="stylesheet" href="/Styles/footer.css" />
+    <title>Moisturizer Homepage -Dot & Key</title>
+  </head>
+  <body>
+    <div id="navInterval"></div>
+    <div id="navbar"></div>
+    <div class="mainBox">
+      <div id="one"><img src="https://bit.ly/35iFllZ" alt="" /></div>
+      <div id="two">MOISTURIZERS</div>
+      <div id="three"></div>
+      <div id="footer"></div>
+    </div>
+  </body>
+</html>
+
+<script type="module">
+  import { navBar, navInt, navcar } from "./Componentes/navBar.js";
+  
+  import { footer } from "./Componentes/footer.js";
+  import {
+    createProductPage,
+    createProductCard,
+    mainDisp,
+    data,
+  } from "./Scripts/main.js";
+  let parent = document.querySelector("#three");
+  data(parent);
+  document.querySelector("#navInterval").innerHTML = navInt();
+  let i = 0;
+  navcar(i);
+  document.querySelector("#navbar").innerHTML = navBar();
+  document.querySelector("#footer").innerHTML = footer();
+  document.querySelector("#leftNav > img ").addEventListener("click",()=>{
+    location.href = "index.html";
+});
+</script>
