@@ -9,6 +9,9 @@
   position: sticky;
   top: 0;
 }
+#Sign_Out,#cartBag{
+  cursor: pointer;
+}
 #navbar {
     width: 100%;
     height: 114px;

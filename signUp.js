@@ -28,11 +28,21 @@ btn.onclick = async (event)=>{
             },
         });
         let data = await res.json();
-         console.log(data);
+         console.log(data.error);
+         if(data.error == false){
+             alert("Account Sreated Successfully");
+             window.location.href="login.html";
+         }else{
+            alert("Username or password already exist!!");
+         }
     } catch (error) {
         console.log(error);
+        
     }
 };
 document.querySelector("#leftNav > img ").addEventListener("click",()=>{
     location.href = "index.html";
+});
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+    location.href = "cart.html";
 });

@@ -121,3 +121,6 @@ document.querySelector("#footer").innerHTML = footer();
 document.querySelector("#leftNav > img ").addEventListener("click", () => {
   location.href = "index.html";
 });
+document.querySelector("#cartBag ").addEventListener("click",()=>{
+  location.href = "cart.html";
+});
