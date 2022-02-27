@@ -132,7 +132,7 @@ body {
 #mainDiv {
   text-align: center;
   font-size: 20px;
-
+  position: relative;
   top: 0;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -151,6 +151,8 @@ body {
 #mainDiv > img {
   height: 311.5px;
   width: 100%;
+  
+ 
 }
 #mainDiv > i {
   color: orange;
@@ -158,6 +160,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.05em;
   line-height: 1.9;
+ 
 }
 #mainPrice {
   display: flex;
@@ -223,7 +226,9 @@ body {
   font-size: small;
   background-color: #919191;
   padding: 7px 9px 7px 11px;
-  display: none;
+  position: absolute;
+  top: 0;
+right: 0;
   letter-spacing: 0.2em;
 }
 #video {
@@ -247,4 +252,67 @@ body {
   width: 100%;
   height: 100%;
 }
+#searchContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 85%;
+  justify-content: space-between;
+  margin: auto;
+}
+#leftSearch {
+  width: 19%;
+}
+#rightSearch {
+  width: 79%;
+  display: block;
 
+}
+#leftSearch > div {
+  border-bottom: 1px solid #919191;
+  padding: 15px 10px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #3c3c3c;
+  cursor: pointer;
+  text-transform: uppercase;
+  line-height: normal;
+}
+#dropDown {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+#dropDown > span:nth-child(1) {
+  margin-right: 7px;
+  margin-top: 2px;
+  color: #3c3c3c;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  line-height: 1.9;
+}
+#dropDown > span:nth-child(2) > select {
+  color: #191919;
+  padding: 6px 10px;
+  line-height: normal;
+  min-width: 175px;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: left;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  background-color: white;
+  border: 1px solid #919191;
+}
+#ItemAppend {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  width: 100%;
+  
+}

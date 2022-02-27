@@ -439,4 +439,52 @@ let arr = [
   }
   
 
-export { createProductCard, createProductPage,mainDisp,data};
+  function searchItems(){
+    return `<div id="searchContainer">
+    <div id="leftSearch">
+      <div>
+        <span>Filter By </span>
+      </div>
+      <div>
+        <span>Category</span>
+        <span>+</span>
+      </div>
+      <div>
+        <span>Product Type</span>
+        <span>+</span>
+      </div>
+      <div>
+        <span>Skin Type</span>
+        <span>+</span>
+      </div>
+      <div>
+        <span>Skin Concern</span>
+        <span>+</span>
+      </div>
+      <div>
+        <span>Price</span>
+        <span>+</span>
+      </div>
+    </div>
+    <div id="rightSearch">
+         <div id="dropDown">
+            <span>Sort By:</span>
+            <span>
+              <select name="" id="sortIdS">
+                <option value="BestSeller">BestSeller</option>
+                <option value="Relevance">Relevance</option>
+                <option value="High">Price(High to Low)</option>
+                <option value="Low">Price(Low to High)</option>
+                <option value="New">New Arrival</option>
+              </select>
+            </span>
+         </div>
+      <div id="ItemAppend">
+        
+      </div>
+
+    </div>
+  </div>`
+  }
+
+export { createProductCard, createProductPage,mainDisp,data,searchItems};
