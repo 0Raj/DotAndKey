@@ -151,7 +151,7 @@
 #mainDiv {
   text-align: center;
   font-size: 20px;
-  /* position: relative; */
+  position: relative;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #mainDiv > img {
@@ -229,8 +229,8 @@ font-weight: bold;
 font-size: small;
 background-color: #919191;
 padding: 7px 9px 7px 11px;
-/* position: absolute; */
-display: none;
+position: absolute; 
+
 top: 0;
 right: 0;
 letter-spacing: .2em;
