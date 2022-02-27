@@ -1,11 +1,22 @@
-  #navbar {
+#navInterval{
+  width: 100%;
+  height: 30px;
+  background-color: #3C3C3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+}
+#navbar {
     width: 100%;
     height: 114px;
     display: flex;
     flex-direction: row;
     height: 110px;
     position: sticky;
-    top: 0;
+    top: 30px;
     background-color: white;
     align-self: stretch;
     border-bottom: 1px solid #c3c3c3;
@@ -25,6 +36,10 @@
   #leftNav > img {
     height: 75%;
     margin-top: 20px;
+    cursor: pointer;
+  }
+  #user{
+    cursor: pointer;
   }
   #rightNav {
     width: 30%;
@@ -38,6 +53,7 @@
   #rightNav > i {
     font-size: 24px;
     color: #3c3c3c;
+    cursor: pointer;
   }
   #rightNav >div > i{
     font-size: 24px;
